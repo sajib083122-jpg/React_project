@@ -1,28 +1,22 @@
 import { useState } from 'react'
 
-import Header from './Header'
-import Content from './Content'
-import Footer from './Footer'
-
-import Greeting from './Greeting'
 
 function App() {
-  const isLoggedIn = false; // Change this to true or false to test the conditional rendering
+  const isLoggedIn = true; // Change this to true or false to test the conditional rendering
 
-  if (isLoggedIn) {
+  
     return (
-      <>  
-      <h1 className='bg-green-300 text-4xl font-bold text-center py-4'>Welcome, User!</h1>
-      </>
+      <div>
+        { isLoggedIn ? (
+          <h1 className="bg-green-500 text-white text-4xl font-bold text-center">Welcome back, user!</h1>
+        ) : (
+          <h1 className="bg-red-500 text-white text-4xl font-bold text-center">Please log in to continue.</h1>
+        )}
+      </div>
     )
   }
-  else {
-   return (
-      <>
-      <h1 className='bg-red-300 text-4xl font-bold text-center py-4'>Please log in.</h1>
-      </>
-    )  
-  }
-}
+      
+   
+  
 
 export default App
