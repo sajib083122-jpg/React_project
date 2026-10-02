@@ -2,15 +2,30 @@ import { useState } from 'react'
 
 
 function App() {
-  const isLoggedIn = true; // Change this to true or false to test the conditional rendering
+  const isLoggedIn = false; // Change this to true or false to test the conditional rendering
+
+  const user = ["Sajib", "Tiyash", "Sarthok"];
 
   
     return (
-      <div>
+      <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+
+        <h1 className='bg-blue-600 text-white text-4xl front-bold text-center'>My App</h1>
+         
         { isLoggedIn ? (
-          <h1 className="bg-green-500 text-white text-4xl font-bold text-center">Welcome back, user!</h1>
+          <>
+          <p className='text-lg font-semibold text-gray-700'>Here are the users:</p>
+          <ul>
+            {user.map((name, index) => (
+              <li key={index} className='text-blue-600 hover:text-blue-500'>
+                {name}
+              </li>
+            ))}
+          </ul>
+          </>
+          
         ) : (
-          <h1 className="bg-red-500 text-white text-4xl font-bold text-center">Please log in to continue.</h1>
+          <h1 className="bg-red-500 text-white text-4xl font-bold text-center">Please log to see the users.</h1>
         )}
       </div>
     )
