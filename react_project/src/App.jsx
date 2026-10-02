@@ -7,20 +7,22 @@ import Footer from './Footer'
 import Greeting from './Greeting'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const isLoggedIn = false; // Change this to true or false to test the conditional rendering
 
-  return (
-    
-      
-    <div className= 'bg-gray-100 min-h-screen flex flex-col items-center justify-center gap-4'>
-      <div>
-        <Header/>
-        <Content/>
-        <Greeting/>
-        <Footer/>
-      </div>
-    </div>
-  )
+  if (isLoggedIn) {
+    return (
+      <>  
+      <h1 className='bg-green-300 text-4xl font-bold text-center py-4'>Welcome, User!</h1>
+      </>
+    )
+  }
+  else {
+   return (
+      <>
+      <h1 className='bg-red-300 text-4xl font-bold text-center py-4'>Please log in.</h1>
+      </>
+    )  
+  }
 }
 
 export default App
