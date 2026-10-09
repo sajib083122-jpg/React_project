@@ -9,7 +9,10 @@ function App() {
 
   function updateName() {
     // alert('Clicked')
-    setUser({ name: 'Sajib Saha', age: 33, })
+    setUser({
+      ...user,
+       name: 'Sajib Saha',
+       age: 33, })
   }
 
 
